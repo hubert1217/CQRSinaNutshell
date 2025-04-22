@@ -7,17 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoMapper" Version="14.0.0" />
     <PackageReference Include="MediatR" Version="12.5.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="9.0.3" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="9.0.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CQRS.Domain\CQRS.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Functions\Webinars\Commands\" />
-    <Folder Include="Functions\Webinars\Queries\GetWebinarDetail\" />
+    <ProjectReference Include="..\CQRS.Application.Security\CQRS.Application.Security.csproj" />
   </ItemGroup>
 
 </Project>

@@ -7,11 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.5.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\CQRS.Application\CQRS.Application.csproj" />
+    <ProjectReference Include="..\CQRS.Infrastructure.Security\CQRS.Infrastructure.Security.csproj" />
     <ProjectReference Include="..\CQRS.Infrastructure\CQRS.InfrastructureEF.csproj" />
   </ItemGroup>
 
