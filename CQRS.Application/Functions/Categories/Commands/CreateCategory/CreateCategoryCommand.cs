@@ -10,7 +10,7 @@ namespace CQRS.Application.Functions.Categories.Commands.CreateCategory
     public class CreateCategoryCommand : IRequest<CreateCategoryCommandResponse>
     {
         public int CategoryId { get; set; }
-        public string Name { get; set; }
-        public string DisplayName { get; set; }
+        public required string Name { get; set; }
+        public required string DisplayName { get; set; }
     }
 }

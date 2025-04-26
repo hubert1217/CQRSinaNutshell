@@ -10,21 +10,21 @@ using System.Threading.Tasks;
 
 namespace CQRS.Application.Functions.Posts.Commands.DeletePost
 {
-    //public class DeletePostCommandHandler : IRequestHandler<DeletePostCommand>
-    //{
-    //    private readonly IMapper _mapper;
-    //    private readonly IAsyncRepository<Post> _postRepository;
+    public class DeletePostCommandHandler : IRequestHandler<DeletePostCommand>
+    {
+        private readonly IMapper _mapper;
+        private readonly IAsyncRepository<Post> _postRepository;
 
-    //    public DeletePostCommandHandler(IMapper mapper, IAsyncRepository<Post> postRepository)
-    //    {
-    //        _mapper = mapper;
-    //        _postRepository = postRepository;
-    //    }
+        public DeletePostCommandHandler(IMapper mapper, IAsyncRepository<Post> postRepository)
+        {
+            _mapper = mapper;
+            _postRepository = postRepository;
+        }
 
-    //    public async Task Handle(DeletePostCommand request, CancellationToken cancellationToken)
-    //    {
-    //        var postToDelete = await _postRepository.GetByIdAsync(request.PostId);
-    //        await _postRepository.DeleteAsync(postToDelete);
-    //    }
-    //}
+        public async Task Handle(DeletePostCommand request, CancellationToken cancellationToken)
+        {
+            var postToDelete = await _postRepository.GetByIdAsync(request.PostId);
+            await _postRepository.DeleteAsync(postToDelete);
+        }
+    }
 }

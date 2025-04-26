@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CQRS.Application.Functions.Webinars.Queries.GetWebinarListByDate
 {
-    class GetWebinarListByDateQuery
+    public class WebinarsByDateViewModel
     {
     }
 }

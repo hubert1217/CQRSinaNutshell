@@ -25,7 +25,7 @@ namespace CQRS.Application.Functions.Posts.Queries.GetPostList
         public async Task<List<PostInListViewModel>> Handle(GetPostsListQuery request, CancellationToken cancellationToken)
         {
             var all = await _postRepository.GetAllAsync();
-            var allordered = all.OrderBy(x => x.Date);
+            //var allOrdered = all.OrderBy(x => x.Date);
 
             return _mapper.Map<List<PostInListViewModel>>(all);
         }

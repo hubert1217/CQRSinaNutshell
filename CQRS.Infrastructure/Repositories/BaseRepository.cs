@@ -35,9 +35,16 @@ namespace CQRS.InfrastructureEF.Repositories
             return await _dbContext.Set<T>().ToListAsync();
         }
 
-        public async Task<T?> GetByIdAsync(int id)
+        public async Task<T> GetByIdAsync(int id)
         {
-            return await _dbContext.Set<T>().FindAsync(id);
+            var entity = await _dbContext.Set<T>().FindAsync(id);
+
+            if (entity == null) 
+            { 
+                throw new KeyNotFoundException($"{typeof(T).Name} with id {id} not found.");
+            }
+
+            return entity;
         }
 
         public async Task UpdateAsync(T entity)
