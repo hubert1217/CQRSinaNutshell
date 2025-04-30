@@ -37,10 +37,6 @@ namespace CQRS_Application.Tests.NUnit2.Categories.Queries
         [Test]
         public async Task GetCategoiriesWithPost() 
         {
-
-            //_categoryRepositoryMock.Verify(repo => repo.GetCategoriesWithPost(SearchCategoryOptions.All), Times.Once);
-
-
             var handler = new GetCategoriesWithPostListQueryHandler(_mapper, _categoryRepositoryMock.Object);
             var request = new GetCategoriesWithPostListQuery() { searchCategory = SearchCategoryOptions.All };
 
@@ -48,7 +44,7 @@ namespace CQRS_Application.Tests.NUnit2.Categories.Queries
 
             Assert.That(result, Is.Not.Null);
 
-            _categoryRepositoryMock.Verify(a=>a.GetCategoriesWithPost(SearchCategoryOptions.All), Times.Never );
+            _categoryRepositoryMock.Verify(repo => repo.GetCategoriesWithPost(SearchCategoryOptions.All), Times.Once);
         }
 
     }
