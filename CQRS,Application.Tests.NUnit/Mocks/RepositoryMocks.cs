@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CQRS.Application.Tests.Mock
+namespace CQRS.Application.Tests.NUnit.Mocks
 {
     public static class RepositoryMocks
     {

@@ -7,6 +7,7 @@ using CQRS.Application.Functions.Posts.Commands.UpdatePost;
 using CQRS.Application.Functions.Posts.Queries.GetPostDetail;
 using CQRS.Application.Functions.Posts.Queries.GetPostList;
 using CQRS.Application.Functions.Webinars.Queries.GetWebinarList;
+using CQRS.Application.Functions.Webinars.Queries.GetWebinarListByDate;
 using CQRS.Domain.Entities;
 
 namespace CQRS.Application.Mapper
@@ -19,6 +20,7 @@ namespace CQRS.Application.Mapper
             CreateMap<Post, PostDetailViewModel>().ReverseMap();
             CreateMap<Post, CreatePostCommand>().ReverseMap();
             CreateMap<Post, UpdatePostCommand>().ReverseMap();
+            CreateMap<Post, CategoryPostDto>().ReverseMap();
 
             CreateMap<Category, CategoryDto>().ReverseMap();
             CreateMap<Category, CategoryListViewModel>().ReverseMap();
@@ -26,6 +28,7 @@ namespace CQRS.Application.Mapper
             CreateMap<Category, CreateCategoryCommand>().ReverseMap();
 
             CreateMap<Webinar, WebinarListViewModel>().ReverseMap();
+            CreateMap<Webinar, WebinarsByDateViewModel>().ReverseMap();
 
 
         }

@@ -11,7 +11,11 @@ namespace CQRS.Application.Functions.Posts.Commands.CreatePost
 {
     public class CreatePostCommandValidator : AbstractValidator<CreatePostCommand>
     {
-        private readonly IPostRepository _postRepository; 
+        private readonly IPostRepository _postRepository;
+
+        public CreatePostCommandValidator()
+        {
+        }
 
         public CreatePostCommandValidator(IPostRepository postRepository)
         {

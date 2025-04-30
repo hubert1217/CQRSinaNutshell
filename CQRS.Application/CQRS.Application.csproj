@@ -16,7 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Functions\Webinars\Commands\" />
     <Folder Include="Functions\Webinars\Queries\GetWebinarDetail\" />
   </ItemGroup>
 

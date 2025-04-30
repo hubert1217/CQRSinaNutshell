@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using CQRS.Application.Contracts.Persistance;
+using CQRS.Application.Functions.Categories.Queries.GetCategoryList;
 using CQRS.Application.Mapper;
 using CQRS.Application.Tests.Mock;
 using Moq;
@@ -26,6 +27,18 @@ namespace CQRS.Application.Tests.Categories.Queries
             }
             );
             _mapper = configurationProvider.CreateMapper();
+        }
+
+        [Fact]
+        public async Task GetAllCategories() 
+        {
+            var handler = new GetCategoryListQueryHandler(_mapper, _mockCategoryRepository.Object);
+
+            var response = await handler.Handle(new GetCategoryListQuery(), CancellationToken.None);
+
+            var allCategories = await _mockCategoryRepository.Object.GetAllAsync();
+
+            response.Count.Equals(allCategories.Count);
         }
     }
 }

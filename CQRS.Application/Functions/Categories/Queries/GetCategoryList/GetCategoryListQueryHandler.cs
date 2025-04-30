@@ -23,7 +23,7 @@ namespace CQRS.Application.Functions.Categories.Queries.GetCategoryList
 
         public async Task<List<CategoryListViewModel>> Handle(GetCategoryListQuery request, CancellationToken cancellationToken)
         {
-            var categoryList = _categoryRepository.GetAllAsync();
+            var categoryList = await _categoryRepository.GetAllAsync();
 
             return _mapper.Map<List<CategoryListViewModel>>(categoryList);
         }
